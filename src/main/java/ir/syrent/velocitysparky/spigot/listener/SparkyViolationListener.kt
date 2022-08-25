@@ -5,10 +5,10 @@ import com.google.common.io.ByteStreams
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import ir.syrent.velocitysparky.spigot.VelocitySparkySpigot
-import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 
+@Suppress("UnstableApiUsage")
 class SparkyViolationListener : Listener {
 
     @EventHandler

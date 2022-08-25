@@ -11,6 +11,10 @@ import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
 import ir.syrent.velocitysparky.listener.PluginMessageListener;
 import org.slf4j.Logger;
 
+
+/**
+ * Velocity version of SparkyBungee (https://github.com/AkramLZ/SparkyBungee)
+ */
 @Plugin(
         id = "velocitysparky",
         name = "VelocitySparky",
@@ -20,10 +24,14 @@ import org.slf4j.Logger;
 )
 public class VelocitySparky {
 
-    private ProxyServer server;
-    private Logger logger;
+    private final ProxyServer server;
+    private final Logger logger;
     public static VelocitySparky instance;
     public static Gson GSON;
+    /**
+     * Create new minecraft channel identifier
+     * The name should be same name that used in {@link ir.syrent.velocitysparky.spigot.VelocitySparkySpigot}
+     */
     public static final ChannelIdentifier VELOCITYSPARKY_CHANNEL = MinecraftChannelIdentifier.create("velocitysparky", "main");
 
     @Inject

@@ -12,7 +12,7 @@ class VelocitySparkySpigot : JavaPlugin() {
     }
 
     override fun onDisable() {
-        this.server.messenger.unregisterOutgoingPluginChannel(this);
+        this.server.messenger.unregisterOutgoingPluginChannel(this)
     }
 
     private fun registerListeners() {
@@ -22,6 +22,6 @@ class VelocitySparkySpigot : JavaPlugin() {
     companion object {
         lateinit var instance: VelocitySparkySpigot
             private set
-        val VELOCITYSPARKY_CHANNEL = "velocitysparky:main"
+        const val VELOCITYSPARKY_CHANNEL = "velocitysparky:main"
     }
 }

@@ -15,6 +15,7 @@ class PluginMessageListener {
         val message = JsonParser.parseString(rawMessage.substring(2)).asJsonObject
         val players = VelocitySparky.instance.server.allPlayers
         val gamemode = players.find { player -> player.username == message["username"].asString }?.currentServer?.get()?.serverInfo?.name ?: "UNKNOWN"
+
         for (player in players) {
             if (player.hasPermission("velocitysparky.notify")) {
                 player.sendMessage(MiniMessage.miniMessage().deserialize(
