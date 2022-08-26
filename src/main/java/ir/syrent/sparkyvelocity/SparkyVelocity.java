@@ -1,6 +1,5 @@
 package ir.syrent.sparkyvelocity;
 
-import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
@@ -14,6 +13,11 @@ import org.slf4j.Logger;
 
 /**
  * Velocity version of SparkyBungee (https://github.com/AkramLZ/SparkyBungee)
+ * The code is not related to SparkyBungee at all, but it does the same thing
+ *
+ * The plugin receives the player data from back-end servers using SparkyAPI and plugin messaging {@link PluginMessageListener}
+ * You need to install plugin on all your back-end servers and Velocity
+ * You need to disable Sparky default notification to prevent message duplications
  */
 @Plugin(
         id = "velocitysparky",
@@ -24,10 +28,10 @@ import org.slf4j.Logger;
 )
 public class SparkyVelocity {
 
+    public static SparkyVelocity instance;
     private final ProxyServer server;
     private final Logger logger;
-    public static SparkyVelocity instance;
-    public static Gson GSON;
+
     /**
      * Create new minecraft channel identifier
      * The name should be same name that used in {@link ir.syrent.sparkyvelocity.spigot.SparkyVelocity}
@@ -37,7 +41,6 @@ public class SparkyVelocity {
     @Inject
     public SparkyVelocity(ProxyServer server, Logger logger) {
         instance = this;
-        GSON = new Gson();
 
         this.server = server;
         this.logger = logger;
