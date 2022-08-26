@@ -1,6 +1,6 @@
 name: VelocitySparky
 version: '${version}'
-main: ir.syrent.velocitysparky.spigot.VelocitySparkySpigot
+main: ir.syrent.sparkyvelocity.spigot.VelocitySparkySpigot
 api-version: 1.13
 prefix: VelocitySparky
 authors: [ Syrent ]

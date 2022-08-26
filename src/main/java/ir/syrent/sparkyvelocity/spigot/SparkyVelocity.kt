@@ -1,9 +1,9 @@
-package ir.syrent.velocitysparky.spigot
+package ir.syrent.sparkyvelocity.spigot
 
-import ir.syrent.velocitysparky.spigot.listener.SparkyViolationListener
+import ir.syrent.sparkyvelocity.spigot.listener.SparkyViolationListener
 import org.bukkit.plugin.java.JavaPlugin
 
-class VelocitySparkySpigot : JavaPlugin() {
+class SparkyVelocity : JavaPlugin() {
 
     override fun onEnable() {
         instance = this
@@ -20,7 +20,7 @@ class VelocitySparkySpigot : JavaPlugin() {
     }
 
     companion object {
-        lateinit var instance: VelocitySparkySpigot
+        lateinit var instance: SparkyVelocity
             private set
         const val VELOCITYSPARKY_CHANNEL = "velocitysparky:main"
     }

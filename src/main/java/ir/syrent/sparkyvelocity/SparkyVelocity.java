@@ -1,4 +1,4 @@
-package ir.syrent.velocitysparky;
+package ir.syrent.sparkyvelocity;
 
 import com.google.gson.Gson;
 import com.google.inject.Inject;
@@ -8,7 +8,7 @@ import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.messages.ChannelIdentifier;
 import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
-import ir.syrent.velocitysparky.listener.PluginMessageListener;
+import ir.syrent.sparkyvelocity.listener.PluginMessageListener;
 import org.slf4j.Logger;
 
 
@@ -22,20 +22,20 @@ import org.slf4j.Logger;
         description = "Sync sparky logs between back-end servers",
         authors = {"Syrent"}
 )
-public class VelocitySparky {
+public class SparkyVelocity {
 
     private final ProxyServer server;
     private final Logger logger;
-    public static VelocitySparky instance;
+    public static SparkyVelocity instance;
     public static Gson GSON;
     /**
      * Create new minecraft channel identifier
-     * The name should be same name that used in {@link ir.syrent.velocitysparky.spigot.VelocitySparkySpigot}
+     * The name should be same name that used in {@link ir.syrent.sparkyvelocity.spigot.SparkyVelocity}
      */
     public static final ChannelIdentifier VELOCITYSPARKY_CHANNEL = MinecraftChannelIdentifier.create("velocitysparky", "main");
 
     @Inject
-    public VelocitySparky(ProxyServer server, Logger logger) {
+    public SparkyVelocity(ProxyServer server, Logger logger) {
         instance = this;
         GSON = new Gson();
 

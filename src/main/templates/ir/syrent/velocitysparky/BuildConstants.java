@@ -1,4 +1,4 @@
-package ir.syrent.velocitysparky;
+package ir.syrent.sparkyvelocity;
 
 // The constants are replaced before compilation
 public class BuildConstants {

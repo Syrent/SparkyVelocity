@@ -1,9 +1,9 @@
-package ir.syrent.velocitysparky.listener
+package ir.syrent.sparkyvelocity.listener
 
 import com.google.gson.JsonParser
 import com.velocitypowered.api.event.Subscribe
 import com.velocitypowered.api.event.connection.PluginMessageEvent
-import ir.syrent.velocitysparky.VelocitySparky
+import ir.syrent.sparkyvelocity.SparkyVelocity
 import net.kyori.adventure.text.minimessage.MiniMessage
 import java.nio.charset.StandardCharsets
 
@@ -13,7 +13,7 @@ class PluginMessageListener {
     private fun onPluginMessage(event: PluginMessageEvent) {
         val rawMessage = String(event.data, StandardCharsets.UTF_8)
         val message = JsonParser.parseString(rawMessage.substring(2)).asJsonObject
-        val players = VelocitySparky.instance.server.allPlayers
+        val players = SparkyVelocity.instance.server.allPlayers
         val gamemode = players.find { player -> player.username == message["username"].asString }?.currentServer?.get()?.serverInfo?.name ?: "UNKNOWN"
 
         for (player in players) {
