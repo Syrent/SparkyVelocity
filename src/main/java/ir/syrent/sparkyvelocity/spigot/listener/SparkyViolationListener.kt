@@ -26,6 +26,7 @@ class SparkyViolationListener : Listener {
         violationData.addProperty("type", checkType)
         violationData.addProperty("violation", violation)
         violationData.addProperty("is_experimental", isExperimental)
+        violationData.addProperty("version", SparkyAPI.getVersion())
 
         val byteArrayDataOutput = ByteStreams.newDataOutput()
         byteArrayDataOutput.writeUTF(Gson().toJson(violationData))

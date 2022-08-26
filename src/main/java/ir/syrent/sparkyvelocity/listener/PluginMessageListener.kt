@@ -19,7 +19,7 @@ class PluginMessageListener {
         for (player in players) {
             if (player.hasPermission("velocitysparky.notify")) {
                 player.sendMessage(MiniMessage.miniMessage().deserialize(
-                    "<hover:show_text:'<light_purple>■ <blue>Gamemode: <aqua>${gamemode}\n\n<yellow>Click to change gamemode'><click:suggest_command:'/joinqueue ${gamemode}'><gradient:dark_red:gold><bold>ANTICHEAT</bold> » <gray><gold>${message["username"]}</gold> failed <gold>${(if (message["is_experimental"].asBoolean) "*" else "") + message["name"].asString}</gold> (<gold>${message["type"].asString}</gold>) <red>x${message["violation"].asString}</click></hover>"
+                    "<hover:show_text:'<light_purple>■ <blue>Version: <aqua>${message["version"]}\n<light_purple>■ <blue>Gamemode: <aqua>${gamemode}\n\n<yellow>Click to change gamemode'><click:suggest_command:'/joinqueue ${gamemode}'><gradient:dark_red:gold><bold>ANTICHEAT</bold> » <gray><gold>${message["username"]}</gold> failed <gold>${(if (message["is_experimental"].asBoolean) "*" else "") + message["name"].asString}</gold> (<gold>${message["type"].asString}</gold>) <red>x${message["violation"].asString}</click></hover>"
                 ))
             }
         }
