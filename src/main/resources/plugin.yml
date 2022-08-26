@@ -1,8 +1,8 @@
-name: VelocitySparky
+name: SparkyVelocity
 version: '${version}'
-main: ir.syrent.sparkyvelocity.spigot.VelocitySparkySpigot
+main: ir.syrent.sparkyvelocity.spigot.SparkyVelocitySpigot
 api-version: 1.13
-prefix: VelocitySparky
+prefix: SparkyVelocity
 authors: [ Syrent ]
 description: Sync sparky logs between back-end servers
 softdepend: [ 'Sparky' ]

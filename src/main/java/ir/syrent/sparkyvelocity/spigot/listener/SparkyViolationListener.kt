@@ -5,7 +5,7 @@ import ac.sparky.api.events.SparkyViolationEvent
 import com.google.common.io.ByteStreams
 import com.google.gson.Gson
 import com.google.gson.JsonObject
-import ir.syrent.sparkyvelocity.spigot.SparkyVelocity
+import ir.syrent.sparkyvelocity.spigot.SparkyVelocitySpigot
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 
@@ -31,6 +31,6 @@ class SparkyViolationListener : Listener {
         val byteArrayDataOutput = ByteStreams.newDataOutput()
         byteArrayDataOutput.writeUTF(Gson().toJson(violationData))
 
-        player.sendPluginMessage(SparkyVelocity.instance, SparkyVelocity.VELOCITYSPARKY_CHANNEL, byteArrayDataOutput.toByteArray())
+        player.sendPluginMessage(SparkyVelocitySpigot.instance, SparkyVelocitySpigot.SPARKYVELOCITY_CHANNEL, byteArrayDataOutput.toByteArray())
     }
 }

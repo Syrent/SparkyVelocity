@@ -8,11 +8,11 @@ import org.bukkit.plugin.java.JavaPlugin
  * whenever a player receive violation
  * @see SparkyViolationListener
  */
-class SparkyVelocity : JavaPlugin() {
+class SparkyVelocitySpigot : JavaPlugin() {
 
     override fun onEnable() {
         instance = this
-        this.server.messenger.registerOutgoingPluginChannel(this, VELOCITYSPARKY_CHANNEL)
+        this.server.messenger.registerOutgoingPluginChannel(this, SPARKYVELOCITY_CHANNEL)
         registerListeners()
     }
 
@@ -25,12 +25,12 @@ class SparkyVelocity : JavaPlugin() {
     }
 
     companion object {
-        lateinit var instance: SparkyVelocity
+        lateinit var instance: SparkyVelocitySpigot
             private set
         /**
          * The name should be same name that used in Velocity main class
          * @see ir.syrent.sparkyvelocity.SparkyVelocity
          */
-        const val VELOCITYSPARKY_CHANNEL = "velocitysparky:main"
+        const val SPARKYVELOCITY_CHANNEL = "sparkyvelocity:main"
     }
 }

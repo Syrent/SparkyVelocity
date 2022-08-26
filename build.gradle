@@ -13,6 +13,11 @@ repositories {
     mavenCentral()
 
     maven {
+        name = 'jitpack.io'
+        url = 'https://jitpack.io'
+    }
+
+    maven {
         name = 'papermc-repo'
         url = 'https://repo.papermc.io/repository/maven-public/'
     }
@@ -24,12 +29,12 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10'
+    implementation "net.kyori:adventure-text-minimessage:4.11.0"
     compileOnly 'com.velocitypowered:velocity-api:3.1.1'
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
-    annotationProcessor 'com.velocitypowered:velocity-api:3.1.1'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation "net.kyori:adventure-text-minimessage:4.11.0"
     compileOnly files('lib/SparkyAPI-2.8.jar')
+    annotationProcessor 'com.velocitypowered:velocity-api:3.1.1'
 }
 
 processResources {

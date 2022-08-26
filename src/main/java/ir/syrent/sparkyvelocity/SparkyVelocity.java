@@ -20,8 +20,8 @@ import org.slf4j.Logger;
  * You need to disable Sparky default notification to prevent message duplications
  */
 @Plugin(
-        id = "velocitysparky",
-        name = "VelocitySparky",
+        id = "sparkyvelocity",
+        name = "SparkyVelocity",
         version = BuildConstants.VERSION,
         description = "Sync sparky logs between back-end servers",
         authors = {"Syrent"}
@@ -34,9 +34,9 @@ public class SparkyVelocity {
 
     /**
      * Create new minecraft channel identifier
-     * The name should be same name that used in {@link ir.syrent.sparkyvelocity.spigot.SparkyVelocity}
+     * The name should be same name that used in {@link ir.syrent.sparkyvelocity.spigot.SparkyVelocitySpigot}
      */
-    public static final ChannelIdentifier VELOCITYSPARKY_CHANNEL = MinecraftChannelIdentifier.create("velocitysparky", "main");
+    public static final ChannelIdentifier SPARKYVELOCITY_CHANNEL = MinecraftChannelIdentifier.create("sparkyvelocity", "main");
 
     @Inject
     public SparkyVelocity(ProxyServer server, Logger logger) {
@@ -53,7 +53,7 @@ public class SparkyVelocity {
 
     private void registerListeners() {
         server.getEventManager().register(this, new PluginMessageListener());
-        server.getChannelRegistrar().register(VELOCITYSPARKY_CHANNEL);
+        server.getChannelRegistrar().register(SPARKYVELOCITY_CHANNEL);
     }
 
     public ProxyServer getServer() {
