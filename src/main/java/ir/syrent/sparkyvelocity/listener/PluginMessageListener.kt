@@ -11,6 +11,8 @@ class PluginMessageListener {
 
     @Subscribe
     private fun onPluginMessage(event: PluginMessageEvent) {
+        if (!event.identifier.equals(SparkyVelocity.SPARKYVELOCITY_CHANNEL)) return
+
         val rawMessage = String(event.data, StandardCharsets.UTF_8)
         val message = JsonParser.parseString(rawMessage.substring(2)).asJsonObject
         val players = SparkyVelocity.instance.server.allPlayers
